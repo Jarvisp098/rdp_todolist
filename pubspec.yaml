@@ -9,7 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    firebase_core: ^2.17.0
+  firebase_core: ^2.17.0
+  cloud_firestore: ^4.11.0
+  firebase: ^9.0.3
+  table_calendar: ^3.1.2
 
 dev_dependencies:
   flutter_test:
@@ -18,3 +21,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/
+  fonts:
+    - family: Caveat
+      fonts:
+        - asset: assets/Caveat-Regular.ttf

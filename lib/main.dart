@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:rdp_todolist/screens/home_page.dart';
+import 'firebase_options.dart';
 
-void main() {
+
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-
-  @override
+  
+  @override 
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      title: 'To-Do list',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
       ),
+      home: HomePage(),
     );
   }
 }
+  
